@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Content Studio - Transform Your Brand with Gen AI</title>
+    <title>AI Content Studio - Premium Gen AI Production</title>
     <style>
         * {
             margin: 0;
@@ -12,286 +12,591 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            color: #ffffff;
+            background: #000000;
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
         
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+            top: -250px;
+            right: -250px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .hero-content {
             text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
         
         header h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
+            font-size: 5em;
+            margin-bottom: 30px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B6B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
         }
         
         header p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            font-size: 1.5em;
+            margin-bottom: 50px;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 15px 40px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 20px 50px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
         }
         
-        .services {
-            padding: 80px 0;
-            background: #f8f9fa;
+        /* Video Showcase Section */
+        .video-showcase {
+            padding: 120px 0;
+            background: #000;
         }
         
-        .section-title {
+        .section-header {
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 60px;
-            color: #2d3748;
+            margin-bottom: 80px;
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .service-icon {
-            font-size: 3em;
+        .section-tag {
+            display: inline-block;
+            color: #FFD700;
+            font-size: 0.9em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             margin-bottom: 20px;
         }
         
-        .service-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #667eea;
+        .section-title {
+            font-size: 3.5em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
         }
         
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
+        .section-subtitle {
+            font-size: 1.3em;
+            color: #808080;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
-        .portfolio {
-            padding: 80px 0;
-        }
-        
-        .portfolio-grid {
+        /* Video Grid Layout */
+        .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
+            margin-bottom: 30px;
         }
         
-        .portfolio-item {
-            background: #f8f9fa;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        
-        .portfolio-item:hover {
-            transform: scale(1.03);
-        }
-        
-        .portfolio-content {
-            padding: 30px;
-        }
-        
-        .portfolio-item h3 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-            color: #2d3748;
-        }
-        
-        .portfolio-tag {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
+        .video-container {
+            position: relative;
+            background: #1a1a1a;
             border-radius: 20px;
-            font-size: 0.85em;
-            margin-bottom: 15px;
+            overflow: hidden;
+            border: 2px solid #2a2a2a;
+            transition: all 0.4s ease;
+            cursor: pointer;
         }
         
-        .stats {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 0;
+        .video-container:hover {
+            border-color: #FFD700;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
         }
         
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
+        .video-16-9 {
+            aspect-ratio: 16 / 9;
         }
         
-        .stat-item h3 {
-            font-size: 3em;
-            margin-bottom: 10px;
+        .video-9-16 {
+            aspect-ratio: 9 / 16;
+            grid-row: span 2;
         }
         
-        .stat-item p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            position: relative;
         }
         
-        .process {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .step {
-            text-align: center;
-            padding: 30px;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #667eea;
-            color: white;
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 0 auto 20px;
+        }
+        
+        .video-placeholder::after {
+            content: '▶';
+            position: absolute;
+            font-size: 2em;
+            color: #000;
+            margin-left: 5px;
+        }
+        
+        .video-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #FFD700;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 80px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #2a2a2a;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            border-color: #FFD700;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            filter: grayscale(100%);
+            transition: filter 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            filter: grayscale(0%);
+        }
+        
+        .service-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #FFD700;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 100px 0;
+            background: #000;
+            border-top: 1px solid #2a2a2a;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 4em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+        
+        .stat-item p {
+            font-size: 1.2em;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 120px 0;
+            background: #000;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 80px;
+        }
+        
+        .portfolio-item {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #2a2a2a;
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover {
+            border-color: #FFD700;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.15);
+        }
+        
+        .portfolio-content {
+            padding: 40px;
+        }
+        
+        .portfolio-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .portfolio-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        .portfolio-item p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 80px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: 900;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
         
         .step h3 {
-            margin-bottom: 15px;
-            color: #2d3748;
+            margin-bottom: 20px;
+            color: #FFD700;
+            font-size: 1.5em;
+            font-weight: 700;
         }
         
+        .step p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+        
+        /* Final CTA */
         .final-cta {
-            padding: 100px 0;
+            padding: 150px 0;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .final-cta h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 4em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            position: relative;
+            z-index: 2;
         }
         
         .final-cta p {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            opacity: 0.95;
+            font-size: 1.5em;
+            margin-bottom: 50px;
+            color: #b0b0b0;
+            position: relative;
+            z-index: 2;
         }
         
+        /* Footer */
         footer {
-            background: #2d3748;
-            color: white;
-            padding: 40px 0;
+            background: #000;
+            color: #808080;
+            padding: 60px 0;
             text-align: center;
+            border-top: 1px solid #2a2a2a;
         }
         
         footer a {
-            color: #667eea;
+            color: #FFD700;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #FFA500;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5em;
+                font-size: 3em;
             }
             
             .section-title {
-                font-size: 2em;
+                font-size: 2.5em;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-9-16 {
+                grid-row: span 1;
+            }
+            
+            .services-grid,
+            .portfolio-grid,
+            .stats-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>🚀 AI Content Studio</h1>
-            <p>Transform Your Brand with Cutting-Edge Gen AI Content</p>
+        <div class="hero-content">
+            <span class="hero-tag">Premium Gen AI Studio</span>
+            <h1>AI Content<br>Redefined</h1>
+            <p>We craft extraordinary visual experiences using cutting-edge generative AI technology</p>
             <a href="#contact" class="cta-button">Start Your Project</a>
         </div>
     </header>
 
+    <!-- Video Showcase Section 1 -->
+    <section class="video-showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h2 class="section-title">Featured Productions</h2>
+                <p class="section-subtitle">Witness the power of AI-driven creativity in action</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-container video-16-9">
+                    <div class="video-placeholder"></div>
+                    <div class="video-label">16:9 Showcase Video 1</div>
+                </div>
+                <div class="video-container video-9-16">
+                    <div class="video-placeholder"></div>
+                    <div class="video-label">9:16 Vertical Story</div>
+                </div>
+                <div class="video-container video-16-9">
+                    <div class="video-placeholder"></div>
+                    <div class="video-label">16:9 Showcase Video 2</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="services">
         <div class="container">
-            <h2 class="section-title">What We Create</h2>
+            <div class="section-header">
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-title">What We Create</h2>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🎨</div>
-                    <h3>AI-Generated Visuals</h3>
-                    <p>Stunning images, illustrations, and graphics created with state-of-the-art AI models. Perfect for marketing campaigns, social media, and brand assets.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✍️</div>
-                    <h3>Content Writing</h3>
-                    <p>Engaging blog posts, product descriptions, and marketing copy powered by advanced language models. SEO-optimized and conversion-focused.</p>
+                    <h3>AI Visuals</h3>
+                    <p>Photorealistic imagery, brand assets, and marketing visuals crafted with state-of-the-art AI models.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎬</div>
-                    <h3>Video Content</h3>
-                    <p>AI-assisted video creation, editing, and animation. From explainer videos to social media reels that capture attention.</p>
+                    <h3>Video Production</h3>
+                    <p>AI-powered video creation, editing, and motion graphics that captivate audiences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Content Strategy</h3>
+                    <p>Data-driven content strategies powered by advanced language models and market intelligence.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎵</div>
-                    <h3>Audio & Voiceovers</h3>
-                    <p>Professional AI voiceovers, podcasts, and audio content in multiple languages and styles. Natural-sounding and customizable.</p>
+                    <h3>Audio & Voice</h3>
+                    <p>Professional AI voiceovers, soundscapes, and audio branding in multiple languages.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📱</div>
-                    <h3>Social Media Assets</h3>
-                    <p>Complete social media content packages including posts, stories, and ads designed to maximize engagement and conversions.</p>
+                    <h3>Social Content</h3>
+                    <p>Scroll-stopping social media content optimized for maximum engagement and conversions.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎯</div>
-                    <h3>Brand Strategy</h3>
-                    <p>AI-powered market research, competitor analysis, and content strategy to position your brand for success.</p>
+                    <h3>Brand Identity</h3>
+                    <p>Complete brand systems from logos to guidelines, all powered by generative AI.</p>
                 </div>
             </div>
         </div>
@@ -302,15 +607,15 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <h3>500+</h3>
-                    <p>Projects Delivered</p>
+                    <p>Projects</p>
                 </div>
                 <div class="stat-item">
                     <h3>98%</h3>
-                    <p>Client Satisfaction</p>
+                    <p>Satisfaction</p>
                 </div>
                 <div class="stat-item">
                     <h3>10x</h3>
-                    <p>Faster Production</p>
+                    <p>Faster</p>
                 </div>
                 <div class="stat-item">
                     <h3>70%</h3>
@@ -320,50 +625,65 @@
         </div>
     </section>
 
+    <!-- Video Showcase Section 2 -->
+    <section class="video-showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">Real results from real brands</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-container video-16-9">
+                    <div class="video-placeholder"></div>
+                    <div class="video-label">16:9 Case Study 1</div>
+                </div>
+                <div class="video-container video-9-16">
+                    <div class="video-placeholder"></div>
+                    <div class="video-label">9:16 Client Testimonial</div>
+                </div>
+                <div class="video-container video-16-9">
+                    <div class="video-placeholder"></div>
+                    <div class="video-label">16:9 Case Study 2</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="portfolio">
         <div class="container">
-            <h2 class="section-title">Recent Work</h2>
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Recent Work</h2>
+            </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-content">
                         <span class="portfolio-tag">E-Commerce</span>
                         <h3>Product Photography Suite</h3>
-                        <p>Generated 500+ product images for an online fashion retailer, increasing conversion rates by 45% and reducing photography costs by 80%.</p>
+                        <p>500+ AI-generated product images increasing conversion by 45% and reducing costs by 80%.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-content">
                         <span class="portfolio-tag">SaaS</span>
                         <h3>Content Marketing Campaign</h3>
-                        <p>Created 3 months of blog content, social posts, and email campaigns for a B2B SaaS company, driving 200% increase in organic traffic.</p>
+                        <p>3-month content strategy driving 200% organic traffic increase for B2B SaaS platform.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Real Estate</span>
                         <h3>Virtual Staging & Tours</h3>
-                        <p>AI-generated interior designs and virtual staging for 50+ properties, reducing time-to-sale by 30% and increasing listing views by 150%.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">Education</span>
-                        <h3>Course Content Creation</h3>
-                        <p>Developed complete video course with AI voiceovers, graphics, and animations for an online learning platform serving 10,000+ students.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-content">
-                        <span class="portfolio-tag">Restaurant</span>
-                        <h3>Menu Photography & Marketing</h3>
-                        <p>Created appetizing food imagery and social media content for a restaurant chain, boosting online orders by 60%.</p>
+                        <p>AI staging for 50+ properties reducing time-to-sale by 30% and boosting views by 150%.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-content">
                         <span class="portfolio-tag">Tech Startup</span>
-                        <h3>Brand Identity Package</h3>
-                        <p>Complete brand assets including logo variations, marketing materials, and social media templates for a fintech startup's launch.</p>
+                        <h3>Brand Identity System</h3>
+                        <p>Complete brand package with logo, assets, and templates for fintech startup launch.</p>
                     </div>
                 </div>
             </div>
@@ -372,27 +692,30 @@
 
     <section class="process">
         <div class="container">
-            <h2 class="section-title">Our Process</h2>
+            <div class="section-header">
+                <span class="section-tag">How We Work</span>
+                <h2 class="section-title">Our Process</h2>
+            </div>
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Discovery</h3>
-                    <p>We understand your brand, goals, and target audience through detailed consultation.</p>
+                    <p>Deep dive into your brand, goals, and target audience.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Strategy</h3>
-                    <p>Develop a custom content strategy leveraging the best AI tools for your needs.</p>
+                    <p>Custom AI-powered content strategy tailored to your needs.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Creation</h3>
-                    <p>Generate high-quality content using cutting-edge AI models and expert refinement.</p>
+                    <p>Generate premium content using cutting-edge AI models.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <h3>Delivery</h3>
-                    <p>Receive polished, ready-to-use content with unlimited revisions until perfect.</p>
+                    <p>Polished, ready-to-use content with unlimited revisions.</p>
                 </div>
             </div>
         </div>
@@ -400,15 +723,15 @@
 
     <section class="final-cta" id="contact">
         <div class="container">
-            <h2>Ready to Transform Your Content?</h2>
-            <p>Let's create something amazing together with the power of Gen AI</p>
-            <a href="mailto:pranayray06official@gmail.com" class="cta-button">Get Started Today</a>
+            <h2>Ready to Elevate Your Brand?</h2>
+            <p>Let's create something extraordinary together</p>
+            <a href="mailto:pranayray06official@gmail.com" class="cta-button">Get Started</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 AI Content Studio. Powered by Bhindi | <a href="mailto:pranayray06official@gmail.com">pranayray06official@gmail.com</a></p>
+            <p>&copy; 2025 AI Content Studio. Premium Gen AI Production | <a href="mailto:pranayray06official@gmail.com">pranayray06official@gmail.com</a></p>
         </div>
     </footer>
 </body>
